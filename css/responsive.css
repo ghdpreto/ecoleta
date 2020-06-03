@@ -11,18 +11,21 @@
   #page-home header a{
     /*elemento fica sobre o restante da pagina*/
     position: absolute;
+    top: 100vh;
     bottom: 48px;
+    display: flex;
+
 
     /*movimenta o elemento no eixo X*/
     /*centralizar o elemento*/
-    left: 50%;
-    transform:translateX(-50%);
-
+    /* left: 50%;
+    transform:translateX(-50%); */
   }
 
   #page-home main {
     align-items: center;
   }
+
 }
 
 @media (min-width: 1700px) {
