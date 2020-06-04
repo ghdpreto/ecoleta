@@ -35,7 +35,13 @@ function getCities(event) {
     const indexOfSelectedState = event.target.selectedIndex
 
     //armazena o valor em texto no input escondido
-    stateInput.value = event.target.options[index].text
+    stateInput.value = event.target.options[indexOfSelectedState].text
+
+    //zera as opções de cidade após trocar o estado
+    citySelect.innerHTML = "<option value>Selecione a cidade</option>"
+
+    //desativa a caixa de seleção
+    citySelect.disabled=true
 
     //url para acesso a api
     const url = `https://servicodados.ibge.gov.br/api/v1/localidades/estados/${ufValue}/municipios`
@@ -45,7 +51,7 @@ function getCities(event) {
         .then((cities) => {
 
             for (const city of cities) {
-                citySelect.innerHTML += `<option value="${city.id}">${city.nome}</option>`
+                citySelect.innerHTML += `<option value="${city.nome}">${city.nome}</option>`
             }
 
             //habilita a caixa de seleçao
@@ -59,3 +65,17 @@ function getCities(event) {
 populateUFs()
 
 
+//items de coleta
+
+//capturando todos os li's
+
+const itemsToCollect = document.querySelectorAll(".items-grid li")
+
+for (const item of itemsToCollect) {
+    item.addEventListener("click", handleSelectedItem)
+    
+}
+
+function handleSelectedItem(event) {
+    console.log(event.target.dataset.id)
+}
