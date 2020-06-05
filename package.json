@@ -1,0 +1,27 @@
+{
+  "name": "ecoleta",
+  "version": "1.0.0",
+  "description": "## Projeto da semana Next Level Week",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "nodemon src/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ghdpreto/ecoleta.git"
+  },
+  "keywords": [],
+  "author": "Gustavo Herique",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ghdpreto/ecoleta/issues"
+  },
+  "homepage": "https://github.com/ghdpreto/ecoleta#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}
