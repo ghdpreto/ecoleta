@@ -1,0 +1,242 @@
+/* efeito branco no backgroud */
+body::after {
+    content: "";
+    position: fixed;
+    background-color: white;
+    top: 260px;
+    right: 0;
+    left: 0;
+    bottom: 0;
+
+    /* manda para baixo de todos os elementos */
+    z-index: -1;
+}
+
+#page-search-results {
+    width: 90%;
+    max-width: 1100px;
+
+    margin: 0 auto;
+}
+
+#page-search-results header {
+    margin-top: 48px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#page-search-results header a{
+    color: var(--title-color);
+    font-weight: bold;
+
+    display: flex;
+    align-items: center;
+}
+
+#page-search-results header a span {
+    display: flex;
+
+    width: 20px;
+    height: 24px;
+    margin-right: 16px;
+
+    background-image: url('../assets/arrow-left.svg');
+
+}
+
+form{
+    background-color: #fff;
+    max-width: 740px;
+    margin: 40px auto 0 ;
+
+    /* preenchimento */
+    padding: 20px;
+    border-radius: 8px;
+
+}
+
+
+form h1 {
+    font-size: 36px;
+}
+
+form fieldset{
+    margin-top: 64px;
+    border: 0;
+}
+
+form legend{
+    margin-bottom: 40px;
+}
+
+form legend h2 {
+    font-size: 24px;
+}
+
+form .field {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+
+    margin-bottom: 24px;
+}
+
+form .field-group{
+    display: flex;
+}
+
+/* aplicandoo o efeito em mais de um seletor */
+form input,
+form select{
+    background-color: #f0f0f9;
+    border: 0;
+    padding: 16px 24px;
+    font-size: 16px;
+    border-radius: 8px;
+
+    /* retira a linha ao clicar no campo */
+    outline: none;
+}
+
+form select{
+    /* remove a seta e css padrão dos campos */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+form label{
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+form .field-group .field + .field {
+    margin-left: 10px;
+}
+
+form button {
+    width: 260px;
+    height: 56px;
+    margin-top: 36px;
+    background-color: var(--primary-color);
+    border-radius: 10px;
+
+    color: white;
+    font-weight: bolde;
+    font-size: 16px;
+    border: none;
+
+    /* efeito transição somente no bgcolor */
+    transition: backgroud-color 400ms;
+}
+
+form button:hover{
+    background-color: #2fb86e;
+}
+
+.items-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+}
+
+.items-grid li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+    height: 180px;
+
+    background-color: #f5f5f5;
+    border: 2px solid #f5f5f5;
+    border-radius: 8px;
+    padding: 32px 24px 16px;
+    
+    text-align: center;
+    list-style: none;
+
+    cursor: pointer;
+
+}
+
+.items-grid li span {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+
+    margin-top: 12px;
+
+    color: var(--title-color);
+}
+
+.items-grid li.selected {
+    background-color: #e1faec;
+    border: 2px solid #34cb79;
+}
+
+
+/* remove a ação de click dos elementos */
+.items-grid li img,
+.items-grid li span {
+    pointer-events: none;
+}
+
+
+main {
+    margin: 48px;
+}
+
+main h4 {
+    font-weight: normal;
+    font-family: Roboto, sans-serif;
+
+    margin-bottom: 32px;
+}
+
+main .cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 24px;
+}
+
+main .card img {
+    width: 100%;
+    height: 150px;
+
+    border-radius: 8px 8px 0 0;
+
+    object-fit: cover;
+}
+
+main .card h1 {
+    margin-top: 32px;
+
+    font-size: 36px;
+    line-height: 40px;
+
+    color: var(--title-color);
+}
+
+main .card h3 {
+    margin: 24px 0;
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 34px;
+
+    color: var(--primary-color);
+}
+
+main .card p {
+    font-size: 16px;
+    line-height: 26px;
+
+    color: #6c6c80;
+}
+
+
