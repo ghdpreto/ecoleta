@@ -12,3 +12,11 @@ Assim moradores e empresas que desjam realizar o descarte correto desses materia
 * HTML
 * CSS
 * JavaScript
+* Nunjucks
+* NodeJs
+
+## Melhorias
+
+- [ ] Responsividade do site
+- [ ] Criar pagina de erro
+- [ ] Criar pagina de itens não localizado
