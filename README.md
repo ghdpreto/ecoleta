@@ -18,5 +18,6 @@ Assim moradores e empresas que desjam realizar o descarte correto desses materia
 ## Melhorias
 
 - [ ] Responsividade do site
-- [ ] Criar pagina de erro
-- [ ] Criar pagina de itens não localizado
+- [ ] Criar página de erro
+- [ ] Criar página de itens não localizado
+- [ ] Campo para adicionar imagem ao criar ponto de coleta
