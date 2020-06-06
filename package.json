@@ -4,7 +4,7 @@
   "description": "## Projeto da semana Next Level Week",
   "main": "src/server.js",
   "scripts": {
-    "start": "nodemon -e js,mjs,json,njk src/server.js",
+    "start": "nodemon -e js,mjs,json,njk,html,css src/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
