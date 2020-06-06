@@ -1,0 +1,45 @@
+{# vinculando a pagina layout #}
+{% extends "layout.njk" %}
+
+{# block que deve ser enviado para pg layout #}
+{% block styles %}
+  <!-- css -->
+  <link rel="stylesheet" href="/css/home.css">
+  <link rel="stylesheet" href="/css/modal.css">
+{% endblock styles %}
+
+{# passando valor por variavel #}
+{% set pageId = "page-home" %}
+{# <div id="page-home"> #}
+
+{# passando conteudo #}
+{% block content %}
+  <div class="content">
+    <header>
+      <img src="/assets/logo.svg" alt="Logomarca">
+      <a href="/create-point">
+        <span></span>Cadastre um ponto de coleta</a>
+    </header>
+
+    <main>
+
+      <h1>Sua marketplace de coleta de resíduos</h1>
+
+      <p>Ajudamos pessoas a encontrarem pontos de coleta de forma eficiente</p>
+
+      <a href="#">
+        <span></span>
+        <strong>Pesquisar ponto de coleta</strong>
+      </a>
+    </main>
+  </div>
+{% endblock content %}
+
+{% block modal %}
+  <!-- modal -->
+  {% include "partials/modal.html" %}
+{% endblock modal %}
+
+{% block scripts %}
+  <script src="/scripts/index.js"></script>
+{% endblock scripts %}

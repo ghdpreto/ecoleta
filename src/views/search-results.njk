@@ -1,0 +1,83 @@
+{% extends "layout.njk" %}
+
+{% block styles %}
+  <link rel="stylesheet" href="/css/search-results.css">
+{% endblock styles %}
+
+{% block title %}
+  <title>Resultado da pesquisa</title>
+{% endblock title %}
+
+{% set pageId = "page-search-results" %}
+
+{% block content %}
+  {% include "partials/page-header.html" %}
+  <main>
+    <h4>
+      <strong>2 pontos</strong>
+      Encontrados
+    </h4>
+    <div class="cards">
+      <div class="card">
+        <img src="/assets/lixo-eletronico.jpg" alt="Colectoria">
+        <h1>Colectoria</h1>
+        <h3>Residuos Eletrônicos, Lâmpadas</h3>
+        <p>
+          Rio do sul, Santa Catarina
+          <br>
+          Guilherme Gemballa, Jardim America
+          <br>
+          Nº 260
+        </p>
+      </div>
+      <div class="card">
+        <img src="/assets/lixo-papel.jpg" alt="Paperside">
+        <h1>Paperside</h1>
+        <h3>Papeis e Papelão</h3>
+        <p>
+          Rio do sul, Santa Catarina
+          <br>
+          Guilherme Gemballa, Jardim America
+          <br>
+          Nº 260
+        </p>
+      </div>
+      <div class="card">
+        <img src="/assets/lixo-papel.jpg" alt="Paperside">
+        <h1>Paperside</h1>
+        <h3>Papeis e Papelão</h3>
+        <p>
+          Rio do sul, Santa Catarina
+          <br>
+          Guilherme Gemballa, Jardim America
+          <br>
+          Nº 260
+        </p>
+      </div>
+      <div class="card">
+        <img src="/assets/lixo-papel.jpg" alt="Paperside">
+        <h1>Paperside</h1>
+        <h3>Papeis e Papelão</h3>
+        <p>
+          Rio do sul, Santa Catarina
+          <br>
+          Guilherme Gemballa, Jardim America
+          <br>
+          Nº 260
+        </p>
+      </div>
+      <div class="card">
+        <img src="/assets/lixo-papel.jpg" alt="Paperside">
+        <h1>Paperside</h1>
+        <h3>Papeis e Papelão</h3>
+        <p>
+          Rio do sul, Santa Catarina
+          <br>
+          Guilherme Gemballa, Jardim America
+          <br>
+          Nº 260
+        </p>
+      </div>
+    </div>
+  </main>
+{% endblock content %}
