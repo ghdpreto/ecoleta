@@ -100,6 +100,9 @@ function handleSelectedItem(event) {
     //captura os numeros do dataset-id
     const itemId = event.target.dataset.id
 
+    //debug
+    // console.log("ItemId: ", itemId)
+
 
     //verificar itens selecionados
     //pegar os itens selecionados
@@ -131,7 +134,8 @@ function handleSelectedItem(event) {
 
     }
 
-    //console.log(selectedItems)
+    //debug
+    // console.log("selectedItems", selectedItems)
 
     //atualizar o campo hidden para envio das info]
     collectedItems.value = selectedItems
