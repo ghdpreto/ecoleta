@@ -2,6 +2,7 @@ const express = require("express"); //usando o express
 const server = express() //executando a express
 
 const nunjucks = require("nunjucks") //usando nunjucks
+const db = require("./database/db") // usando do banco de dados
 
 //configurando o nunjucks
 nunjucks.configure("src/views", {
@@ -32,7 +33,21 @@ server.get("/create-point", function (req, res) {
 
 // pagina search-result
 server.get("/search", function (req, res) {
-    return res.render("search-results.njk")
+
+    // pegando os dados do db
+    db.all(`SELECT * FROM places`, function (err, rows) {
+        if (err) {
+            return console.log(err)
+        }
+
+        //qnt de itens
+        const total = rows.length
+
+        //enviar os dados (places) do db para a pagina html
+        return res.render("search-results.njk", { places: rows, total })
+    })
+
+    // return res.render("search-results.njk")
 })
 
 

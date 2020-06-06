@@ -14,70 +14,36 @@
   {% include "partials/page-header.html" %}
   <main>
     <h4>
-      <strong>2 pontos</strong>
-      Encontrados
+      {% if total > 1 %}
+        <strong>{{ total }}
+          Locais</strong>
+        encontrados
+      {% else %}
+        <strong>{{ total }}
+          Local</strong>
+        encontrado
+      {% endif %}
     </h4>
     <div class="cards">
-      <div class="card">
-        <img src="/assets/lixo-eletronico.jpg" alt="Colectoria">
-        <h1>Colectoria</h1>
-        <h3>Residuos Eletrônicos, Lâmpadas</h3>
-        <p>
-          Rio do sul, Santa Catarina
-          <br>
-          Guilherme Gemballa, Jardim America
-          <br>
-          Nº 260
-        </p>
-      </div>
-      <div class="card">
-        <img src="/assets/lixo-papel.jpg" alt="Paperside">
-        <h1>Paperside</h1>
-        <h3>Papeis e Papelão</h3>
-        <p>
-          Rio do sul, Santa Catarina
-          <br>
-          Guilherme Gemballa, Jardim America
-          <br>
-          Nº 260
-        </p>
-      </div>
-      <div class="card">
-        <img src="/assets/lixo-papel.jpg" alt="Paperside">
-        <h1>Paperside</h1>
-        <h3>Papeis e Papelão</h3>
-        <p>
-          Rio do sul, Santa Catarina
-          <br>
-          Guilherme Gemballa, Jardim America
-          <br>
-          Nº 260
-        </p>
-      </div>
-      <div class="card">
-        <img src="/assets/lixo-papel.jpg" alt="Paperside">
-        <h1>Paperside</h1>
-        <h3>Papeis e Papelão</h3>
-        <p>
-          Rio do sul, Santa Catarina
-          <br>
-          Guilherme Gemballa, Jardim America
-          <br>
-          Nº 260
-        </p>
-      </div>
-      <div class="card">
-        <img src="/assets/lixo-papel.jpg" alt="Paperside">
-        <h1>Paperside</h1>
-        <h3>Papeis e Papelão</h3>
-        <p>
-          Rio do sul, Santa Catarina
-          <br>
-          Guilherme Gemballa, Jardim America
-          <br>
-          Nº 260
-        </p>
-      </div>
+
+      {# {{ places }} objeto que vem do db #}
+
+      {# loop para alimentar os cards com os dados do db #}
+      {% for place in places %}
+        <div class="card">
+          <img src="{{ place.image }}" alt="{{ place.name }}">
+          <h1>{{ place.name }}</h1>
+          <h3>{{ place.items }}</h3>
+          <p>
+            {{ place.city }},
+            {{ place.state }}
+            <br>
+            {{ place.address }}
+            <br>
+            {{ place.address2 }}
+          </p>
+        </div>
+      {% endfor %}
     </div>
   </main>
 {% endblock content %}
