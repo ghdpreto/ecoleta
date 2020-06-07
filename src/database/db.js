@@ -90,7 +90,7 @@ db.serialize(function () {
     //         console.log(err)
     //     }
     //     console.log("Registro deletado com sucesso")
-    // });
+     });
 })
 */
 

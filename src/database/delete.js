@@ -7,11 +7,9 @@ const sqlite3 = require("sqlite3").verbose()
 const db = new sqlite3.Database("./src/database/database.db") 
  
  // deletar dado da tabela
-     db.run(`DELETE FROM places WHERE id = ?`, [2], function (err) {
+     db.run(`DELETE FROM places`, function (err) {
          if(err) {
              console.log(err)
          }
          console.log("Registro deletado com sucesso")
      });
-
-    

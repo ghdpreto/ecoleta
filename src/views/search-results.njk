@@ -24,26 +24,35 @@
         encontrado
       {% endif %}
     </h4>
-    <div class="cards">
 
-      {# {{ places }} objeto que vem do db #}
+    {% if total >= 1 %}
+      <div class="cards">
 
-      {# loop para alimentar os cards com os dados do db #}
-      {% for place in places %}
-        <div class="card">
-          <img src="{{ place.image }}" alt="{{ place.name }}">
-          <h1>{{ place.name }}</h1>
-          <h3>{{ place.items }}</h3>
-          <p>
-            {{ place.city }},
-            {{ place.state }}
-            <br>
-            {{ place.address }}
-            <br>
-            {{ place.address2 }}
-          </p>
-        </div>
-      {% endfor %}
-    </div>
+        {# {{ places }} objeto que vem do db #}
+
+        {# loop para alimentar os cards com os dados do db #}
+        {% for place in places %}
+          <div class="card">
+            <img src="{{ place.image }}" alt="{{ place.name }}">
+            <h1>{{ place.name }}</h1>
+            <h3>{{ place.items }}</h3>
+            <p>
+              {{ place.city }},
+              {{ place.state }}
+              <br>
+              {{ place.address }}
+              <br>
+              {{ place.address2 }}
+            </p>
+          </div>
+        {% endfor %}
+      </div>
+    {% else %}
+      <div id="search-not-found">
+        <h1>Nenhum local cadastrado</h1>
+        <span></span>
+      </div>
+    {% endif %}
+
   </main>
 {% endblock content %}

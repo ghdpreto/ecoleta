@@ -66,13 +66,12 @@ server.post("/save-point", function (req, res) {
     ]
 
     function afterInsetDate(err) {
-        if(err) {
-
+        if (err) {
             // criar pagina de erro
             console.log(err)
             return res.send("Erro de cadastro")
         }
-        console.log("Cadastrado com sucesso")    
+        console.log("Cadastrado com sucesso")
         console.log(this)
 
         //saved true =  abre o modal com ok
@@ -86,29 +85,40 @@ server.post("/save-point", function (req, res) {
 // pagina search-result
 server.get("/search", function (req, res) {
     const search = req.query.search
+    //total de intes localizados
+    let total = ""
 
     console.log(search)
 
+    //se o campo está vazio
     if (search == "") {
         // pesquisa vazia
         // envia resultado, if dentro da pagina
-        return res.render("search-results.njk", { total: 0 })
+        // return res.render("search-results.njk", { total: 0 })
+        // retorna todos os locais cadastrados
+        db.all(`SELECT * FROM places`, function (err, rows) {
+            if (err) {
+                return console.log(err)
+            }
+            total = rows.length
+
+            return res.render("search-results.njk", { places: rows, total })
+        })
+    } else {
+        // se o campo está com informação
+        // pegando os dados do db
+        db.all(`SELECT * FROM places WHERE city LIKE '%${search}%'`, function (err, rows) {
+            if (err) {
+                return console.log(err)
+            }
+
+            //qnt de itens
+            total = rows.length
+
+            //enviar os dados (places) do db para a pagina html
+            return res.render("search-results.njk", { places: rows, total })
+        })
     }
-
-    // pegando os dados do db
-    db.all(`SELECT * FROM places WHERE city LIKE '%${search}%'`, function (err, rows) {
-        if (err) {
-            return console.log(err)
-        }
-
-        //qnt de itens
-        const total = rows.length
-
-        //enviar os dados (places) do db para a pagina html
-        return res.render("search-results.njk", { places: rows, total })
-    })
-
-    // return res.render("search-results.njk")
 })
 
 

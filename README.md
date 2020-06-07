@@ -4,7 +4,7 @@
 
 ## O que é?
 
-Web site para divulgar empresas que realizam coleta de matérias reciclaveis.
+Web site para divulgar pontos de coletas de materiais recilávies.
 Assim moradores e empresas que desjam realizar o descarte correto desses materiais, possam entrar em contato.  
 
 ## Tecnologias utilizadas
@@ -18,6 +18,5 @@ Assim moradores e empresas que desjam realizar o descarte correto desses materia
 ## Melhorias
 
 - [ ] Responsividade do site
-- [ ] Criar página de erro
-- [ ] Criar página de itens não localizado
+- [x] Criar página de itens não localizado
 - [ ] Campo para adicionar imagem ao criar ponto de coleta
